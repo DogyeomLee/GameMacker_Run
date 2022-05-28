@@ -8,6 +8,7 @@ public class RobotsBehavior : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     private bool isradar;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -727,9 +727,6 @@ GameObject:
   - component: {fileID: 7425517832655935246}
   - component: {fileID: 686445870536571508}
   - component: {fileID: 874358649831073837}
-  - component: {fileID: 3669834487964541115}
-  - component: {fileID: 6453022551514861161}
-  - component: {fileID: 874358650153494983}
   m_Layer: 0
   m_Name: JR-1
   m_TagString: Enemy
@@ -787,55 +784,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1342218, y: 3.2717888, z: 2.1185007}
   m_Center: {x: 0.06552884, y: 1.6025599, z: 0.00032007578}
---- !u!195 &3669834487964541115
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5861405196522874141}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &6453022551514861161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5861405196522874141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2debde66eafc904a95da6616a30d6ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  player: {fileID: 0}
---- !u!65 &874358650153494983
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5861405196522874141}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 17.447666, y: 3.9320536, z: 17.662937}
-  m_Center: {x: 0.76646805, y: 1.4660268, z: 0.59466505}
 --- !u!1 &5893886662038579852
 GameObject:
   m_ObjectHideFlags: 0

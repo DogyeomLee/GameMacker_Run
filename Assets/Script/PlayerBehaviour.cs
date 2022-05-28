@@ -9,7 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     public CharacterController controller;
 
     [Header("Movement")]
-    public float maxSpeed = 10.0f;
+    public float maxSpeed = 5.0f;
     public float gravity = -30.0f;
     public float jumpheight = 3.0f;
     public Vector3 velocity;
@@ -60,6 +60,15 @@ public class PlayerBehaviour : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded)
+        {
+            maxSpeed = 9.0f;
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift) && isGrounded)
+        {
+            maxSpeed = 5.0f;
+        }
+
     }
     void OnDrawGizmos()
     {
@@ -68,7 +77,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "radar")
+        if (other.gameObject.tag == "Enemy")
         {
             HealthCheck();
             hpbar.value -= 10;
