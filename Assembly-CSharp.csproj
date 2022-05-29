@@ -62,6 +62,7 @@
     <Compile Include="Assets\Script\RobotsBehavior.cs" />
     <Compile Include="Assets\Script\Menu.cs" />
     <Compile Include="Assets\Script\StartSecneController.cs" />
+    <Compile Include="Assets\Script\MovingPlayform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

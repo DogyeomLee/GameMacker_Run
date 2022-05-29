@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
 {
     public GameObject loadMenuHolder;
     public GameObject optionsMenuHolder;
+    public GameObject KeyMapHolder;
     public Toggle invertY;
 
     public AudioMixer masterMixer;
@@ -38,6 +39,7 @@ public class Menu : MonoBehaviour
     {
         loadMenuHolder.SetActive(false);
         optionsMenuHolder.SetActive(false);
+        KeyMapHolder.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,6 +60,18 @@ public class Menu : MonoBehaviour
     {
         loadMenuHolder.SetActive(false);
         optionsMenuHolder.SetActive(false);
+    }
+    public void KeyMenu()
+    {
+        loadMenuHolder.SetActive(false);
+        optionsMenuHolder.SetActive(true);
+        KeyMapHolder.SetActive(true);
+    }
+    public void KeyBackMenu()
+    {
+        loadMenuHolder.SetActive(false);
+        optionsMenuHolder.SetActive(true);
+        KeyMapHolder.SetActive(false);
     }
     public void LoadMenu()
     {

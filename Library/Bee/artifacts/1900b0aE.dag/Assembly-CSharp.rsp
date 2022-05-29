@@ -354,6 +354,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/CameraController.cs"
 "Assets/Script/Menu.cs"
+"Assets/Script/MovingPlayform.cs"
 "Assets/Script/PlayerBehaviour.cs"
 "Assets/Script/Puase.cs"
 "Assets/Script/RobotsBehavior.cs"

@@ -15,6 +15,6 @@ public class StartSecneController : MonoBehaviour
     }
     public void OnmenuButton_Click()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("MainMenu");
     }
 }
