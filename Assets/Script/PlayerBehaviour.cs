@@ -25,10 +25,6 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip jump;
     public AudioClip hurt;
 
-    [Header("Healthbar")]
-
-    public Slider hpbar;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -79,17 +75,9 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            HealthCheck();
-            hpbar.value -= 10;
+
             mySFX.PlayOneShot(hurt);
         }
     }
-    public void HealthCheck()
-    {
-        hpbar.value -= 10f;
-        if (hpbar.value <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-    }
+
 }
