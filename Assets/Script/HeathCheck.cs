@@ -57,5 +57,9 @@ public class HeathCheck : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
         }
+        if (other.gameObject.tag == ("fall"))
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

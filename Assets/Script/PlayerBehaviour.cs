@@ -25,10 +25,22 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip jump;
     public AudioClip hurt;
 
+    [Header("text")]
+    public GameObject text1;
+    public GameObject text2;
+    public GameObject text3;        
+    public GameObject text4;
+
+
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        text1.SetActive(false);
+        text2.SetActive(false);
+        text3.SetActive(false);
+        text4.SetActive(false);
     }
 
     // Update is called once per frame
@@ -75,8 +87,38 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-
             mySFX.PlayOneShot(hurt);
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "text1")
+        {
+            text1.SetActive(true);
+            text2.SetActive(false);
+            text3.SetActive(false);
+            text4.SetActive(false);
+        }
+        if (other.gameObject.tag == "text2")
+        {
+            text2.SetActive(true);
+            text1.SetActive(false);
+            text3.SetActive(false);
+            text4.SetActive(false);
+        }
+        if (other.gameObject.tag == "text3")
+        {
+            text3.SetActive(true);
+            text1.SetActive(false);
+            text2.SetActive(false);
+            text4.SetActive(false);
+        }
+        if (other.gameObject.tag == "text4")
+        {
+            text3.SetActive(false);
+            text1.SetActive(false);
+            text2.SetActive(false);
+            text4.SetActive(true);
         }
     }
 
