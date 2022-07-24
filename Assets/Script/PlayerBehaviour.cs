@@ -31,6 +31,10 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject text3;        
     public GameObject text4;
 
+    [Header("OnscreenController")]
+    public Joystick leftJoystick;
+    public GameObject Minimap;
+    public GameObject onScreenControls;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,18 @@ public class PlayerBehaviour : MonoBehaviour
         text2.SetActive(false);
         text3.SetActive(false);
         text4.SetActive(false);
+
+        switch (Application.platform)
+        {
+            case RuntimePlatform.Android:
+                onScreenControls.SetActive(true);
+                break;
+            case RuntimePlatform.WebGLPlayer:
+            case RuntimePlatform.WindowsEditor:
+                onScreenControls.SetActive(false);
+                break;
+        }
+    
     }
 
     // Update is called once per frame
@@ -55,9 +71,14 @@ public class PlayerBehaviour : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * maxSpeed * Time.deltaTime);
+
+        float x1 = leftJoystick.Horizontal;
+        float z1 = leftJoystick.Vertical;
+        Vector3 move1 = transform.right * x1 + transform.forward * z1;
+        controller.Move(move1 * maxSpeed * Time.deltaTime);
+
 
         if(Input.GetButton("Jump") && isGrounded)
         {
@@ -120,6 +141,26 @@ public class PlayerBehaviour : MonoBehaviour
             text2.SetActive(false);
             text4.SetActive(true);
         }
+
+    }
+    public void OnAButton_Pressed()
+    {
+        if (isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpheight * -2.0f * gravity);
+        }
+    }
+    public void OnMapButton_Pressed()
+    {
+        Minimap.SetActive(!Minimap.activeInHierarchy);
+    }
+    public void SaveButton_Pressed()
+    {
+       GameSaveManager.Instance().SaveGame(transform);
+    }
+    public void LoadButton_Pressed()
+    {
+        GameSaveManager.Instance().LoadGame(transform);
     }
 
 }

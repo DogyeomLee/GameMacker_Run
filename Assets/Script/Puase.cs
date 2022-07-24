@@ -22,7 +22,13 @@ public class Puase : MonoBehaviour
             pause.SetActive(true);
             mouse.mouseSenstivity = 0.0f;
             return;
-        }
+        }    
+    }
+    public void Pausepress()
+    {
+            Time.timeScale = 0;
+            pause.SetActive(true);
+            mouse.mouseSenstivity = 0.0f;
     }
     public void back()
     {
