@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public GameObject Gun;
     public CharacterController controller;
 
     [Header("Movement")]
@@ -24,6 +25,10 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioSource mySFX;
     public AudioClip jump;
     public AudioClip hurt;
+
+    [Header("inventory")]
+    public GameObject gun2;
+    public GameObject button;
 
     [Header("text")]
     public GameObject text1;
@@ -56,7 +61,7 @@ public class PlayerBehaviour : MonoBehaviour
                 onScreenControls.SetActive(false);
                 break;
         }
-    
+        button.SetActive(false);
     }
 
     // Update is called once per frame
@@ -96,6 +101,21 @@ public class PlayerBehaviour : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.LeftShift) && isGrounded)
         {
             maxSpeed = 5.0f;
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            Gun.SetActive(false);
+        }
+        if(gun2.activeSelf == true)
+        {
+            if (Input.GetKeyUp(KeyCode.Alpha2))
+            {
+                Gun.SetActive(true);
+            }
+        }
+        if(Gun.activeSelf == true)
+        {
+            button.SetActive(true);
         }
 
     }
@@ -141,7 +161,13 @@ public class PlayerBehaviour : MonoBehaviour
             text2.SetActive(false);
             text4.SetActive(true);
         }
-
+        if (other.gameObject.tag == "gun")
+        {
+            Gun.SetActive(true);
+            gun2.SetActive(true);
+            button.SetActive(true);
+            Destroy(other.gameObject);
+        }
     }
     public void OnAButton_Pressed()
     {
@@ -162,5 +188,23 @@ public class PlayerBehaviour : MonoBehaviour
     {
         GameSaveManager.Instance().LoadGame(transform);
     }
-
+    public void button1_Pressed()
+    {
+        Gun.SetActive(false);
+        button.SetActive(false);
+    }
+    public void button2_Pressed()
+    {
+        if (gun2.activeSelf == true)
+        {
+             Gun.SetActive(true);
+            button.SetActive(true);
+        }
+        else
+        {
+            Gun.SetActive(false);
+            button.SetActive(false);
+        }
+    }
 }
+

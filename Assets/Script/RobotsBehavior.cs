@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class RobotsBehavior : MonoBehaviour
 {
+
     public NavMeshAgent agent;
     public Transform player;
     private bool isradar;
@@ -35,6 +36,10 @@ public class RobotsBehavior : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             isradar = true;
+        }
+        if(other.gameObject.tag == "bullet")
+        {
+            Destroy(this.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)

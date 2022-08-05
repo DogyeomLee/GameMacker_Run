@@ -12,6 +12,8 @@ TagManager:
   - text2
   - text3
   - text4
+  - gun
+  - bullet
   layers:
   - Default
   - TransparentFX
