@@ -12,8 +12,6 @@ ScriptsOnlyBuild:
     - Puase
     - RobotsBehavior
     - StartSecneController
-    Unity.AI.Navigation.Editor.dll:
-    - Unity.AI.Navigation.Editor.NavMeshAssetManager
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshSurface
     Unity.Rider.Editor.dll:
