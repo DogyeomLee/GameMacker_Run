@@ -64,14 +64,14 @@
     <Compile Include="Assets\Script\PlayerBehaviour.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Script\HeathCheck.cs" />
-    <Compile Include="Assets\Bullet.cs" />
+    <Compile Include="Assets\Script\Bullet.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Script\RobotsBehavior.cs" />
     <Compile Include="Assets\Nokobot\Modern Guns - Handgun\_Demo Assets\SimpleShoot.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Script\MovingPlayform.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
-    <Compile Include="Assets\Fire.cs" />
+    <Compile Include="Assets\Script\Fire.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Script\Menu.cs" />
     <Compile Include="Assets\Script\GameSaveManager.cs" />

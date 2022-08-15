@@ -35,6 +35,13 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject text2;
     public GameObject text3;        
     public GameObject text4;
+    public GameObject tu1;
+    public GameObject tu2;
+    public GameObject tu3;
+
+    [Header("Quest")]
+    public GameObject q1;
+    public GameObject q3;
 
     [Header("OnscreenController")]
     public Joystick leftJoystick;
@@ -50,6 +57,11 @@ public class PlayerBehaviour : MonoBehaviour
         text2.SetActive(false);
         text3.SetActive(false);
         text4.SetActive(false);
+        tu1.SetActive(false);
+        tu2.SetActive(false);
+        tu3.SetActive(false);
+        q1.SetActive(false);
+        q3.SetActive(false); 
 
         switch (Application.platform)
         {
@@ -160,6 +172,25 @@ public class PlayerBehaviour : MonoBehaviour
             text1.SetActive(false);
             text2.SetActive(false);
             text4.SetActive(true);
+            q3.SetActive(true);
+        }
+        if (other.gameObject.tag == "tu1")
+        {
+            tu1.SetActive(true);
+            tu2.SetActive(false);
+            tu3.SetActive(false);
+        }
+        if (other.gameObject.tag == "tu2")
+        {
+            tu1.SetActive(false);
+            tu2.SetActive(true);
+            tu3.SetActive(false);
+        }
+        if (other.gameObject.tag == "tu3")
+        {
+            tu1.SetActive(false);
+            tu2.SetActive(false);
+            tu3.SetActive(true);
         }
         if (other.gameObject.tag == "gun")
         {
@@ -167,6 +198,11 @@ public class PlayerBehaviour : MonoBehaviour
             gun2.SetActive(true);
             button.SetActive(true);
             Destroy(other.gameObject);
+            q1.SetActive(true);
+        }
+        if (other.gameObject.tag == "finish")
+        {
+            SceneManager.LoadScene("Game");
         }
     }
     public void OnAButton_Pressed()
