@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject q2;
+    public GameObject q22;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(other.gameObject);
             q2.SetActive(true);
+            q22.SetActive(false);
         }
     }
 }

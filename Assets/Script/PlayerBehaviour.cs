@@ -41,7 +41,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Quest")]
     public GameObject q1;
+    public GameObject q11;
     public GameObject q3;
+    public GameObject q33;
 
     [Header("OnscreenController")]
     public Joystick leftJoystick;
@@ -61,7 +63,9 @@ public class PlayerBehaviour : MonoBehaviour
         tu2.SetActive(false);
         tu3.SetActive(false);
         q1.SetActive(false);
-        q3.SetActive(false); 
+        q11.SetActive(true);
+        q3.SetActive(false);
+        q33.SetActive(true);
 
         switch (Application.platform)
         {
@@ -173,6 +177,7 @@ public class PlayerBehaviour : MonoBehaviour
             text2.SetActive(false);
             text4.SetActive(true);
             q3.SetActive(true);
+            q33.SetActive(false);
         }
         if (other.gameObject.tag == "tu1")
         {
@@ -199,6 +204,7 @@ public class PlayerBehaviour : MonoBehaviour
             button.SetActive(true);
             Destroy(other.gameObject);
             q1.SetActive(true);
+            q11.SetActive(false);
         }
         if (other.gameObject.tag == "finish")
         {

@@ -12,11 +12,14 @@ ScriptsOnlyBuild:
     - Puase
     - RobotsBehavior
     - StartSecneController
+    Unity.AI.Navigation.Editor.dll:
+    - Unity.AI.Navigation.Editor.NavMeshAssetManager
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshSurface
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
@@ -33,7 +36,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
@@ -43,6 +49,9 @@ ScriptsOnlyBuild:
     - TMPro.FontAssetCreationSettings
     - TMPro.KerningTable
     - TMPro.TMP_Character
+    - TMPro.TMP_Dropdown/DropdownEvent
+    - TMPro.TMP_Dropdown/OptionData
+    - TMPro.TMP_Dropdown/OptionDataList
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
     - TMPro.TMP_GlyphAdjustmentRecord
@@ -69,6 +78,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
@@ -121,6 +132,39 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PlayerBehaviour
     methodName: OnMapButton_Pressed
+  - assembly: Assembly-CSharp
+    fullTypeName: Fire
+    methodName: fire
+  - assembly: Assembly-CSharp
+    fullTypeName: Puase
+    methodName: Pausepress
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerBehaviour
+    methodName: button2_Pressed
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerBehaviour
+    methodName: SaveButton_Pressed
+  - assembly: Assembly-CSharp
+    fullTypeName: Puase
+    methodName: back
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerBehaviour
+    methodName: OnAButton_Pressed
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerBehaviour
+    methodName: LoadButton_Pressed
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerBehaviour
+    methodName: button1_Pressed
+  - assembly: Assembly-CSharp
+    fullTypeName: Puase
+    methodName: back
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerBehaviour
+    methodName: OnMapButton_Pressed
+  - assembly: Assembly-CSharp
+    fullTypeName: Puase
+    methodName: Questpress
   - assembly: Assembly-CSharp
     fullTypeName: Fire
     methodName: fire
@@ -195,6 +239,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2650}
     - Class: 114
+      Script: {instanceID: 2662}
+    - Class: 114
       Script: {instanceID: 2874}
     - Class: 114
       Script: {instanceID: 2888}
@@ -207,11 +253,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3424}
     - Class: 114
+      Script: {instanceID: 4002}
+    - Class: 114
       Script: {instanceID: 4966}
     - Class: 114
       Script: {instanceID: 4988}
     - Class: 114
       Script: {instanceID: 5150}
+    - Class: 114
+      Script: {instanceID: 5154}
     - Class: 114
       Script: {instanceID: 5218}
     - Class: 114
@@ -219,13 +269,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5502}
     - Class: 114
+      Script: {instanceID: 5594}
+    - Class: 114
       Script: {instanceID: 5928}
     - Class: 114
       Script: {instanceID: 6080}
     - Class: 114
       Script: {instanceID: 6432}
     - Class: 114
+      Script: {instanceID: 6444}
+    - Class: 114
       Script: {instanceID: 6688}
+    - Class: 114
+      Script: {instanceID: 7562}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -379,6 +435,123 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    Assets/Scenes/Tutorial.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1542}
+    - Class: 114
+      Script: {instanceID: 2110}
+    - Class: 114
+      Script: {instanceID: 2344}
+    - Class: 114
+      Script: {instanceID: 2650}
+    - Class: 114
+      Script: {instanceID: 2874}
+    - Class: 114
+      Script: {instanceID: 2888}
+    - Class: 114
+      Script: {instanceID: 3176}
+    - Class: 114
+      Script: {instanceID: 3204}
+    - Class: 114
+      Script: {instanceID: 3208}
+    - Class: 114
+      Script: {instanceID: 3424}
+    - Class: 114
+      Script: {instanceID: 4966}
+    - Class: 114
+      Script: {instanceID: 4988}
+    - Class: 114
+      Script: {instanceID: 5150}
+    - Class: 114
+      Script: {instanceID: 5218}
+    - Class: 114
+      Script: {instanceID: 5310}
+    - Class: 114
+      Script: {instanceID: 5502}
+    - Class: 114
+      Script: {instanceID: 5928}
+    - Class: 114
+      Script: {instanceID: 6080}
+    - Class: 114
+      Script: {instanceID: 6432}
+    - Class: 114
+      Script: {instanceID: 6688}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
     - Class: 241
       Script: {instanceID: 0}
@@ -623,7 +796,7 @@ ScriptsOnlyBuild:
     className: Minimap
   - hash:
       serializedVersion: 2
-      Hash: 843953032fcf03e9eeb2a28d6f7816ff
+      Hash: a6ee1fb85d04af1ffc03e2d3f95c6012
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Puase
@@ -665,7 +838,7 @@ ScriptsOnlyBuild:
     className: VariablesAsset
   - hash:
       serializedVersion: 2
-      Hash: 5592d374f70700a087c51dc95d880712
+      Hash: 1fb6e04037629c1c1194518561fa559d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerBehaviour
@@ -875,7 +1048,7 @@ ScriptsOnlyBuild:
     className: UnityOnEndDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: a2c52e9bcbca7c0ec11db0c4d1b37236
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -1302,6 +1475,7 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
+  - Assets/Scenes/Tutorial.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/GameOver.unity
   playerPath: C:/Users/dogam/Downloads/GameMacker_Run/apk.apk
